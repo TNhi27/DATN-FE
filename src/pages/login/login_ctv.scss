@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #316b83;
+  color: rgb(255, 255, 255);
+  padding: 10px 100px;
+}
+.top-info a {
+  color: rgb(255, 255, 255);
+  margin: 0px 20px;
+  text-decoration: none;
+}
+.top-info i {
+  padding-left: 20px;
+}
+
+.top-text {
+  display: flex;
+}
+
+.top-text .fa-phone,
+.fa-envelope {
+  margin-right: 10px;
+}
+.top-link {
+  display: flex;
+}
+
+body {
+  background: #350b40;
+}
+.hero-login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    width: 70%;
+    height: 80vh;
+    background: url(../../assets/img/login.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 2px 2px #000000;
+
+    .form {
+      width: 40%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      h1 {
+        text-align: center;
+
+        font-family: monospace;
+        font-size: 40px;
+      }
+      p {
+        text-align: center;
+
+        font-family: monospace;
+      }
+      .qmk {
+        a {
+          text-decoration: none;
+          &:hover {
+            color: #d89216;
+          }
+        }
+      }
+      form {
+        margin-top: 30px;
+        .input-group {
+          display: flex;
+          flex-direction: column;
+        }
+        .input-f {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          i {
+            font-size: 24px;
+          }
+          .form-message {
+            display: block;
+          }
+          input {
+            width: 85%;
+            font-size: 16px;
+            padding: 10px 10px;
+            outline: none;
+            border: none;
+            border-radius: 200px;
+            margin: 10px 0;
+            background-color: #bdbdbd;
+            &:focus {
+              background-color: #bdbdbd;
+            }
+          }
+        }
+      }
+      .btn-f {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+
+        justify-content: center;
+        a {
+          padding: 10px 20px;
+          text-decoration: none;
+          color: white;
+          background: #350b40;
+          border-radius: 20px;
+          &:hover {
+            background: #797a7e;
+            color: #350b40;
+          }
+        }
+      }
+    }
+  }
+}
+
+a.back {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  border-radius: 20px;
+  z-index: 10;
+  &:hover {
+    background: #bdbdbd;
+    color: #350b40;
+  }
+}
+.fa-eye-slash {
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgb(15, 52, 96);
+  color: white;
+}
+footer img {
+  width: 100%;
+  height: 200px;
+}
+
+footer .col {
+  flex-basis: 33%;
+  display: flex;
+  flex-direction: column;
+}
+footer .col:nth-child(2) h3,
+footer .col:nth-child(3) h3 {
+  margin-bottom: 20px;
+}
+footer .col:nth-child(2),
+footer .col:nth-child(3) {
+  margin-left: 20px;
+}
+
+footer .col:nth-child(2) ul,
+footer .col:nth-child(3) ul {
+  list-style: none;
+}
+footer .col:nth-child(2) ul li,
+footer .col:nth-child(3) ul li {
+  padding: 5px 0;
+}
+
+footer .col:nth-child(1) {
+  padding: 5px 20px;
+}
+
+.show-menu {
+  position: fixed;
+  top: 33px;
+  right: 10px;
+  display: none;
+  font-size: 20px;
+}
+.show-menu i {
+  color: white;
+}
+
+footer .col .socal {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.search-re,
+.icon-re {
+  display: none;
+}
+
+footer .col .socal i:hover {
+  color: red;
+}
+@media only screen and (max-width: 700px) {
+  .hero-login {
+    .content {
+      width: 85%;
+
+      .form {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .hero-login {
+    .content {
+      width: 85%;
+      background: none;
+
+      .form {
+        width: 100%;
+      }
+    }
+  }
+  a.back {
+    color: #350b40;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+  footer .col .socal {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

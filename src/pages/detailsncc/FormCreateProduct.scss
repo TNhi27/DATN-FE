@@ -1,0 +1,183 @@
+.form-create {
+  width: auto;
+  margin: 30px;
+  .tag-wrapper{
+    color: rgb(36, 11, 77);
+    background: white;
+    margin-left: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    button{
+      background: transparent;
+      border: none;
+
+    }
+  }
+  .ReactTags__tagInput{
+    margin-top: 10px;
+    input{
+      border: none;
+      padding: 5px;
+      outline: none;
+    }
+  }
+  .edit {
+    margin-top: 30px;
+  }
+  .form-group {
+    label {
+      cursor: pointer;
+    }
+  }
+  .products-header {
+    display: flex;
+    align-items: center;
+    
+
+    .search {
+      flex: 1;
+      padding: 0 10px;
+      margin: 0 20px;
+      input {
+        flex: 1;
+        font-size: 16px;
+        height: 40px;
+        margin: 0px 20px;
+        outline: none;
+        border: none;
+      }
+    }
+    h5 {
+      flex: 1;
+      
+      margin: 0 20px;
+      font-size: 24px;
+    }
+    select {
+      flex: 1;
+      border-radius: 20px;
+    }
+    a {
+      text-align: center;
+      flex: 1;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      background: #232c49;
+      padding: 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      &:hover {
+        .tooltip-tao {
+          display: block;
+        }
+      }
+    }
+    .link{
+      display: flex;
+      flex:2;
+      justify-content:flex-end;
+      a{
+       
+        display: flex;
+        flex:none;
+        flex-direction: column;
+        border-radius:5px;
+        margin: 10px;
+      }
+    }
+    .havatool {
+      position: relative;
+      .tooltip-tao {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        background: #ffa115;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 10px;
+      }
+    }
+  }
+  .products-body {
+    margin-top: 30px;
+  }
+  table {
+    td {
+      height: 100px;
+      line-height: 100px;
+    }
+    .tensp {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    a {
+      text-decoration: none;
+      background: #232c49;
+      padding: 10px;
+      border-radius: 5px;
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  .form-products {
+    margin-top: 20px;
+    .form-pro {
+      display: flex;
+      margin-top: 20px;
+      .form-left {
+        flex: 2;
+        background: #eeeeee;
+        margin: 0px 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 7px 0px #a8a8a8;
+        padding: 10px;
+        .item-in {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+
+          label {
+            font-size: 16px;
+          }
+          input {
+            width: 100%;
+            padding: 6px;
+            outline: none;
+          }
+        }
+      }
+      .form-right {
+        flex: 1;
+      }
+    }
+  }
+  .note {
+    color: red;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .form-pro{
+    flex-direction: column;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .form-pro{
+    flex-direction: column;
+  }
+  .products-header{
+    font-size: 15px;
+  }
+  .edit{
+    display: none;
+  }
+  
+
+}
+

@@ -1,0 +1,64 @@
+.container{
+    background:#dbdbdb;
+    width: 100%;
+    height:100vh;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    .card{
+        
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+       
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px 1px rgb(40, 23, 99);
+        background: rgb(255, 255, 255);
+       
+        position: relative;
+        img{
+            width: 100px;
+            
+        }
+        h3{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 700;
+        }
+        button{
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            padding: 5px;
+            font-size: 25px;
+            background: transparent;
+            
+        }
+        .bot{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            a{
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                background: #f3a90a;
+                padding: 10px;
+                border-radius: 10px;
+                min-width: 100px;
+                text-align: center;
+                font-weight: 700;
+            }
+        }
+    }
+   
+}
+
+.cmt{
+    width: 100%;
+}

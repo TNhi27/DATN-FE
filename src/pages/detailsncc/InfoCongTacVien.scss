@@ -1,0 +1,88 @@
+.info-ctv{
+    margin: 50px;
+    .top{
+        border-bottom: 1px solid rgb(182, 182, 182);
+        padding: 10px;
+       h5{
+           display: flex;
+           align-items: center;
+           a{
+               cursor: pointer;
+           }
+           i{
+               margin-right: 5px;
+               font-size: 21px;
+               cursor: pointer;
+           }
+       }
+        
+    }
+    .content{
+        display: flex;
+        color: #091353;
+        .info{
+           
+            flex-basis: 30%;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 3px 3px 7px 0px #a8a8a8;
+            border-radius: 10px;
+            background: #f1f1f1;
+            .img{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                img{
+                    width: 130px;
+                    height: 160px;
+                }
+                span{
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+            .row{
+                margin-top: 10px;
+                .col{
+                    span{
+                        font-weight: 200 !important;
+                        i{
+                            color:#091353;
+                        }
+                    }
+                    p{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .his{
+            flex-basis: 70%;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 3px 3px 7px 0px #a8a8a8;
+            border-radius: 10px;
+            background: #f1f1f1;
+            table{
+                width: 100%;
+                img{width: 60px;}
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 570px){
+    .info-ctv{
+        margin: 5px;
+        .content{
+           
+            flex-direction: column;
+            .his{
+                margin: 0;
+                table{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

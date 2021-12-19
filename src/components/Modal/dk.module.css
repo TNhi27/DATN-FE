@@ -1,0 +1,54 @@
+
+.card {
+    width: 400px;
+    border: none;
+    height: 300px;
+    color: white;
+    background-color: black;
+    box-shadow: 0px 5px 20px 0px #6F1667;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  
+  .card h6 {
+    color: white;
+    font-size: 20px
+  }
+  
+  .inputs input {
+    width: 40px;
+    height: 40px
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0
+  }
+  
+  .form-control1:focus {
+    box-shadow: none;
+    background-color: #6F1667;
+    border: 2px solid #6F1667
+  }
+  
+  .validate1 {
+    border-radius: 20px;
+    height: 40px;
+    background-color: #6F1667;
+    border: 1px solid #6F1667;
+    width: 100%
+  }
+  
+  .content1 a {
+    color: #6F1667;
+    transition: all 0.5s
+  }
+  
+  .content1 a:hover {
+    color: white
+  }

@@ -1,0 +1,27 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+   ul{
+       
+       li{
+           margin: 0 10px;
+            
+           color:white;
+           display: inline-block;
+           background:#00a19d;
+           button{
+                background:#00a19d;
+                border:none;
+                padding: 5px;
+                color:white;
+           }
+           input{
+               width: 50px;
+               outline:none;
+               padding: 5px;
+               border:none;
+           }
+       }
+   }
+   
+}

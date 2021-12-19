@@ -1,0 +1,105 @@
+.news{
+  width: 100%;
+  padding: 20px auto;
+ 
+    .new-box{
+        margin-top: 20px;
+        position: relative;
+        
+        overflow: hidden;
+        text-align: center;
+       
+        display: flex;
+        justify-content: center;
+        a{
+            display: block;
+            overflow: hidden;
+            background: red;
+            border-radius: 10px;
+           
+        }
+        img{
+            transition: all .3s ease;
+            width: 500px;
+            height: 560px;
+          
+        }
+        .new-info{
+            position: absolute;
+            bottom: 0;
+            color: rgb(0, 0, 0);
+            display: block;
+            background: rgb(236, 236, 236);
+            border-radius: 10px;
+            padding: 10px 30px;
+            width: 500px;
+            h4{
+
+            }
+            span{
+
+            }
+        }
+    }
+
+    .list{
+        .list-item{
+            display: flex;
+            margin: 10px 0;
+            img{
+                width: 100px;
+                height: 100px;
+            }
+            .text{
+               h5{
+                font-size: 20px;
+               }
+            }
+        }
+    }
+.hinh{
+    overflow: hidden;
+    display: block;
+}
+    .new{
+        padding: 10px;
+       
+        display: flex;
+        flex-direction: column;
+        background: "#EAEAEA";
+        overflow: hidden;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        a{
+           text-decoration: none;
+           overflow: hidden;
+           color: black;
+        }
+        img{
+            width: 100%;
+            height: 300px;
+            border-radius: 5px;
+            transition: all .3s ease;
+            &:hover{
+                transform: scale(1.5);
+              
+               } 
+        }
+        .info{
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            
+            flex-direction: column;
+            justify-content: center;
+            .sub{
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+.detail-new{
+    width: 80%;
+    margin:30px auto;
+}

@@ -1,0 +1,87 @@
+.products-ncc {
+  width: auto;
+  margin: 30px;
+  .products-header {
+    display: flex;
+    align-items: center;
+
+    .search {
+      flex: 1;
+      padding: 0 10px;
+      margin: 0 20px;
+      input {
+        flex: 1;
+        font-size: 16px;
+        height: 40px;
+        margin: 0px 20px;
+        outline: none;
+        border: none;
+      }
+    }
+    h5 {
+      flex: 1;
+      text-align: center;
+      margin: 0 20px;
+      font-size: 28px;
+    }
+    select {
+      flex: 1;
+      border-radius: 20px;
+    }
+    a {
+      text-align: center;
+      flex: 1;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      background: #232c49;
+      padding: 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      &:hover {
+        .tooltip-tao {
+          display: block;
+        }
+      }
+    }
+    .havatool {
+      position: relative;
+      .tooltip-tao {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        background: #ffa115;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 10px;
+        z-index: 11;
+      }
+    }
+  }
+  .products-body {
+    margin-top: 30px;
+  }
+  table {
+    td {
+     
+    }
+    .tensp {
+      display: flex;
+      flex-wrap: wrap;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    a {
+      text-decoration: none;
+      background: #232c49;
+      padding: 10px;
+      border-radius: 5px;
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+

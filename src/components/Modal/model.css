@@ -1,0 +1,46 @@
+.modalwel {
+    display: block; /* mặc định được ẩn đi */
+    position: fixed; /* vị trí cố định */
+    z-index: 1; /* Ưu tiên hiển thị trên cùng */
+    padding-top: 100px; 
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+ 
+/* Modal Content */
+.modal-contentw {
+    background-color: transparent;
+    margin: auto;
+    padding: 20px;
+    
+    width: 500px;
+    height: 70%;
+    
+}
+
+.modal-contentw img{
+  width: 100%;
+  height: 100%;
+}
+
+ 
+/* The Close Button */
+.close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 570px) {
+    .modal-contentw {
+        width: 300px;
+        height: 300px;
+    }
+}

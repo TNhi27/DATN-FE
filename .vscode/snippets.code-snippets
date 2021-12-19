@@ -1,0 +1,13 @@
+{
+  "Call api": {
+    "prefix": "callAPI",
+    "body": [
+      "const [error, resp] = await _callAPI(${1:url}, \"GET/POST/PUT/DELETE\", ${2:data});",
+      "    if (error) {",
+      "      console.log(error);",
+      "      return false;",
+      "    }"
+    ],
+    "description": "Call api"
+  }
+}

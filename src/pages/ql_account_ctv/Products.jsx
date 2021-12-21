@@ -11,13 +11,13 @@ function Products(props) {
   const [category, setCategory] = useState([]);
   const user = useSelector(state => state.login);
 
-  const [filter,setFilter] = useState({
-    category:"%%",
-    name:"%%"
+  const [filter, setFilter] = useState({
+    category: "%%",
+    name: "%%"
   })
 
   useEffect(() => {
-    getRegiProduct(user.username,filter).then((res) => {
+    getRegiProduct(user.username, filter).then((res) => {
       setProductList(res.data.content)
       let cate = [];
       res.data.content.map((e) => {
@@ -26,22 +26,22 @@ function Products(props) {
       const cates = Array.from(new Set(cate.map(JSON.stringify))).map(JSON.parse);
 
       setCategory(cates);
-      
+
     })
   }, [])
 
-  useEffect(()=>{
-    getRegiProduct(user.username,filter).then((res)=>{
+  useEffect(() => {
+    getRegiProduct(user.username, filter).then((res) => {
       setProductList(res.data.content)
     })
-  },[filter])
+  }, [filter])
 
 
   const handlDelete = (id) => {
     deleteRegiProduct(id).then((res) => {
       alert(res.data)
     }).then(() => {
-      getRegiProduct(user.username,filter).then((res) => {
+      getRegiProduct(user.username, filter).then((res) => {
         setProductList(res.data.content)
 
       })
@@ -49,17 +49,17 @@ function Products(props) {
   }
 
   const handlFillterCate = (evt) => {
-   setFilter({...filter,category:evt.target.value})
+    setFilter({ ...filter, category: evt.target.value })
 
   }
 
-  const handlSearch =(evt)=>{
-    setFilter({...filter,name:evt.target.value})
+  const handlSearch = (evt) => {
+    setFilter({ ...filter, name: evt.target.value })
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0)
-},[])
+  }, [])
 
 
   return (
@@ -78,7 +78,7 @@ function Products(props) {
           }
         </select>
         <div className="search">
-          <input onChange={(e)=>handlSearch(e)} type="text" placeholder="Tìm kiếm"></input>
+          <input onChange={(e) => handlSearch(e)} type="text" placeholder="Tìm kiếm"></input>
           <i class="fas fa-search"></i>
         </div>
         <div className="btn-ncc">
@@ -98,54 +98,54 @@ function Products(props) {
 
       </div>
       <div className="products-body">
-      <div className="table-responsive">
-      <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">
-                <input type="checkbox" />
-              </th>
-              <th >Tên sản phẩm</th>
-              <th >Giá Sản phẩm</th>
-              <th >Gía đăng kí bán</th>
+        <div className="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <input type="checkbox" />
+                </th>
+                <th >Tên sản phẩm</th>
+                <th >Giá Sản phẩm</th>
+                <th >Gía đăng kí bán</th>
 
-              <th>Ngày đăng kí</th>
-              <th>#</th>
+                <th>Ngày đăng kí</th>
+                <th>#</th>
 
-            </tr>
-          </thead>
-          <tbody>
-            {
-              productList.map((e,i) => {
-                return (
-                  <tr >
-                    <td scope="row">
-                     {e+1}
-                    </td>
-                    <td className="tensp" style={{display:'flex',alignItems:'center'}}>
-                      <img
-                        src={e.products.image0}
-                        alt=""
-                      />
-                      <span>{e.products.name}</span>
-                    </td>
-                    <td>{e.products.pricectv}</td>
-                    <td>{e.price}</td>
-
-
-                    <td >{timeStampToStringFormat(e.regidate)}</td>
-
-                    <td ><i onClick={() => handlDelete(e.idregi)} class="far fa-trash-alt del"></i></td>
-                  </tr>
-                )
-              })
-            }
+              </tr>
+            </thead>
+            <tbody>
+              {
+                productList.map((e, i) => {
+                  return (
+                    <tr >
+                      <td scope="row">
+                        {i + 1}
+                      </td>
+                      <td className="tensp" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img
+                          src={e.products.image0}
+                          alt=""
+                        />
+                        <span>{e.products.name}</span>
+                      </td>
+                      <td>{e.products.pricectv}</td>
+                      <td>{e.price}</td>
 
 
-          </tbody>
-        </table>
-      </div>
-        
+                      <td >{timeStampToStringFormat(e.regidate)}</td>
+
+                      <td ><i onClick={() => handlDelete(e.idregi)} class="far fa-trash-alt del"></i></td>
+                    </tr>
+                  )
+                })
+              }
+
+
+            </tbody>
+          </table>
+        </div>
+
 
       </div>
       <Pagination />

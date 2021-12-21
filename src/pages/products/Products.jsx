@@ -6,7 +6,7 @@ import Loading from "../../components/Loading";
 import Pagination from "../../components/Pagination/Pagination";
 import Product from "../../components/Product";
 import { getCategoryById, getCategoryList } from "../../service/_category";
-import { getCityNcc, getOrigins, getProductsList } from "../../service/_products";
+import { getBrands, getCityNcc, getOrigins, getProductsList } from "../../service/_products";
 
 import "./module.scss";
 
@@ -21,13 +21,14 @@ function Products() {
   const [totalPage, setTotalPage] = useState(0);
   const [categories, setCategories] = useState([]);
   const [origins, setOrigins] = useState([]);
+  const [brands, setBrands] = useState([]);
   const [cites, setCities] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("");
 
-  
+  const [countBrand, setCountBrand] = useState(5)
 
-  
- 
+
+
 
   const select = useSelector(state => state.search);
 
@@ -44,7 +45,8 @@ function Products() {
     max: 100000000,
     des: true,
     query: select.name || "",
-    parent: select.category ||""
+    parent: select.category || "",
+    brands: []
   })
 
 
@@ -54,7 +56,7 @@ function Products() {
   //init
   useEffect(() => {
 
-   
+
     getCategoryList().then((res) => {
       setCategories(res.data)
     })
@@ -64,24 +66,32 @@ function Products() {
     getCityNcc().then((res) => {
       setCities(res.data)
     })
+
   }, [])
+
+  useEffect(() => {
+    getBrands(countBrand, fil.parent).then((res) => {
+      setBrands(res.data.content)
+    })
+  }, [countBrand, fil.parent])
 
 
   useEffect(() => {
 
-    setFil({ ...fil, query: select.name, page: 0,parent:select.category })
+    setFil({ ...fil, query: select.name, page: 0, parent: select.category })
 
   }, [select])
 
- 
 
-  
+
+
 
   useEffect(() => {
 
     setOnloading(true);
+    
     getProductsList(fil).then((res) => {
-      console.log(fil);
+
 
       setListProducts(res.data.content)
       setTotalResult(res.data.totalElements)
@@ -117,6 +127,10 @@ function Products() {
     }
   }
 
+  const handleShowBrand = () => {
+    setCountBrand(countBrand + 5)
+  }
+
   const handldShowAll = (e, des = true) => {
     setFil({ ...fil, category: "%%", des: des, parent: "" })
 
@@ -139,6 +153,17 @@ function Products() {
 
 
   }
+
+  const handleBrandCheck = (e) => {
+    if (fil.brands.includes(e)) {
+      setFil({ ...fil, brands: fil.brands.filter(el => el !== e) })
+    } else {
+      setFil({ ...fil, brands: [...fil.brands, e] })
+    }
+
+
+  }
+
   const handleCityCheck = (e) => {
     if (fil.city.includes(e)) {
       setFil({ ...fil, city: fil.city.filter(el => el !== e) })
@@ -179,7 +204,8 @@ function Products() {
         max: 100000000,
         des: true,
         query: "",
-        parent:""
+        parent: "",
+        brands:[]
       }
     )
     let ck = document.getElementsByName("origin");
@@ -189,6 +215,11 @@ function Products() {
     let city = document.getElementsByName("city");
     city.forEach((e) => {
       e.checked = false;
+    })
+
+    let brand = document.getElementsByName("brand");
+    brand.forEach((e)=>{
+      e.checked=false;
     })
     min.current.value = 0
     max.current.value = 0;
@@ -300,6 +331,42 @@ function Products() {
 
 
 
+              </div>
+              <div className="gr-filter">
+                <label className="title-filter">Thương hiệu</label>
+                {
+                  brands.map((e, i) => {
+                    return (
+                      <div className="check">
+                        <input
+                          type="checkbox"
+                          id={e.id + "br"}
+                          name="brand"
+                          value={e.id}
+                          onChange={() => handleBrandCheck(e.id)}
+                        />
+                        <label htmlFor={e.id + "br"}>{e.name}</label>
+                      </div>
+                    )
+                  })
+                }
+                 {/* <div className="check">
+                        <input
+                          type="checkbox"
+                          id={"none" + "br"}
+                          name="brand"
+                          value={}
+                          onChange={() => handleBrandCheck()}
+                        />
+                        <label htmlFor={"none" + "br"}>Không có thương hiệu</label>
+                      </div> */}
+
+
+                <div className="box-bottom">
+                  <button onClick={() => handleShowBrand()} className="btn apdung">
+                    Thêm
+                  </button>
+                </div>
               </div>
 
               <div className="line-one"></div>

@@ -3,7 +3,7 @@ import FooterComponent from "../../components/Footer/FooterComponent";
 import "./style.scss";
 import cmt from "../../assets/img/comment.png";
 import { Redirect, useHistory, useParams } from "react-router";
-import { getCommentsOfProducts, getProductsById, getProductsWithCategory } from "../../service/_products";
+import { getCommentsOfProducts, getPpt, getProductsById, getProductsWithCategory } from "../../service/_products";
 import { getNccByProduct } from "../../service/_supplier";
 import Comments from "../../components/Comments";
 import countStar from "../../lib/CountStar";
@@ -63,9 +63,13 @@ const DetailsProduct = (props) => {
 
     getProductsById(idpro.id).then((res) => {
       console.log(res.data);
+      getPpt(idpro.id).then((res)=>{
+        setProperties(res.data|| [])
+        console.log(res.data);
+      })
       setProduct(res.data)
       setTypeName(res.data.category.typename)
-      setProperties(res.data.properties || [])
+     
       let list = [];
       list.push(res.data.image0)
       list.push(res.data.image1)

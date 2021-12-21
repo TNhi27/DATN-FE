@@ -85,7 +85,7 @@ function About(props) {
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="" alt="..." />
+                            <img class="mx-auto rounded-circle" src="../assets/img/ta.jpg" alt="..." />
                             <h4>Lưu Trường Tá</h4>
                             
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -95,7 +95,7 @@ function About(props) {
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="" alt="..." />
+                            <img class="mx-auto rounded-circle" src="../assets/img/men.jpg" alt="..." />
                             <h4>Lưu Thị Kim Thoa</h4>
                             
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -105,7 +105,7 @@ function About(props) {
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="" alt="..." />
+                            <img class="mx-auto rounded-circle" src="../assets/img/dinh.jpg" alt="..." />
                             <h4>Trần Phước Định</h4>
                             
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -118,7 +118,7 @@ function About(props) {
                 <div  class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="" alt="..." />
+                            <img class="mx-auto rounded-circle" src="../assets/img/nghia.jpg" alt="..." />
                             <h4>Phan Thế Nghĩa</h4>
                             
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -128,7 +128,7 @@ function About(props) {
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="" alt="..." />
+                            <img class="mx-auto rounded-circle" src="../assets/img/trung.jpg" alt="..." />
                             <h4>Nguyễn Trần Tiến Trung</h4>
                             
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>

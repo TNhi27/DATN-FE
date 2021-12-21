@@ -37,7 +37,7 @@ function Payment(props) {
             alert("Vui lòng nhập số tiền cần thực hiện")
         } else {
             if (user.username !== "") {
-                createTransaction(giaodich).then((res) => {
+                createTransaction(giaodich).then((res) => {console.log(giaodich);
                     alert("Giao dịch đã được tạo, tiền sẻ được cộng vào tài khoản sau khi admin check đúng thông tin!")
                     if (user.role === "[ROLE_CTV]") {
                         h.push("/congtacvien/giaodich")
